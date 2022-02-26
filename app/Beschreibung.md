@@ -37,6 +37,11 @@
 ------------------------------------------------------------
 ------------------------------------------------------------
 step 12 Splashscreen
+    splashscreen mit Wechsel zur Mainactivity nach 2,5 Sek.
+    Ordner assets angelegt, 2 fonts hinterlegt
+    BoldTextView hinzugefügt,
+    assets-Folder erstellt
+    2 Fonts im assetsFolder gespeichert
 ------------------------------------------------------------
 step 11 Setup Firebase/Firestore ind build.gradle
 ------------------------------------------------------------

@@ -5,5 +5,14 @@
     <color name="colorAccent">#b71c1c</color>
     <color name="colorLight">#ff6d60</color>
 
+    // Rewe Farbpalette
+    <color name="colorReweRot">#D22027</color>
+    <color name="colorRewePrimary">#D22027</color>
+    <color name="colorRewePrimaryDark">#990000</color>
+    <color name="colorReweLight">#ff5c51</color>
+
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightGrey">#f7f7f7f7</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorDarkGrey">#B94A5557</color>
 </resources>

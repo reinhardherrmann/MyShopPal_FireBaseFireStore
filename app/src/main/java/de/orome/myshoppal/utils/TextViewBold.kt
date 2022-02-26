@@ -1,11 +1,11 @@
-package de.orome.myshoppal
+package de.orome.myshoppal.utils
 
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 
-class BoldTextView(context: Context,
+class TextViewBold(context: Context,
                    attributeSet: AttributeSet): AppCompatTextView(context,attributeSet) {
     init{
         applyFont()
