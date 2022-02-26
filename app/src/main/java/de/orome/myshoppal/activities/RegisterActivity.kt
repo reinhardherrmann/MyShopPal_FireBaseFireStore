@@ -9,15 +9,15 @@ import android.view.WindowManager
 import android.widget.TextView
 import de.orome.myshoppal.R
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var tvRegister: TextView
+    private lateinit var tvLogin: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
 
-        // setLoginScreen to fullScreen for all Android versions
+        // set RegisterScreen to fullScreen for all Android versions
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController ?.hide(WindowInsets.Type.statusBars())
@@ -28,9 +28,10 @@ class LoginActivity : AppCompatActivity() {
             )
         }
 
-        tvRegister = findViewById(R.id.tv_register)
-        tvRegister.setOnClickListener {
-            startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
+        tvLogin = findViewById(R.id.tv_login)
+        tvLogin.setOnClickListener {
+            intent = Intent(this@RegisterActivity,LoginActivity::class.java)
+            startActivity(intent)
         }
 
     }

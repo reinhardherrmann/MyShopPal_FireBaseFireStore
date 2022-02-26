@@ -11,7 +11,9 @@
         android:theme="@style/Theme.MyShopPal">
         <activity
             android:name=".activities.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.LoginActivity"
             android:exported="false"

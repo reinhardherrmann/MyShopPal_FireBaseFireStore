@@ -34,6 +34,9 @@
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
+step 18 Register Activity
+        Layout erstellt Wechsel zwischen Login und Register
+        und umgekehrt eingerichtet
 ------------------------------------------------------------
 step 16 custom Button prepare LoginActivity
         customButton.kt erstellt

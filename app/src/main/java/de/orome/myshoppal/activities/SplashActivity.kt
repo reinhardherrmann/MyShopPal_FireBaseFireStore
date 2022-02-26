@@ -35,7 +35,7 @@ class SplashActivity : AppCompatActivity() {
             {
                 // Launch the MainActivity
                 startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
-                finish()
+                finish() // kein Zurück
             },
             2500
         )
