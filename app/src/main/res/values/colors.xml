@@ -15,4 +15,9 @@
     <color name="colorLightGrey">#f7f7f7f7</color>
     <color name="colorBlack">#000000</color>
     <color name="colorDarkGrey">#B94A5557</color>
+
+    <color name="colorPrimaryText">#000000</color>
+    <color name="colorSecondaryText">#B94A5557</color>
+    <color name="colorWhiteText">#FFFFFF</color>
+
 </resources>

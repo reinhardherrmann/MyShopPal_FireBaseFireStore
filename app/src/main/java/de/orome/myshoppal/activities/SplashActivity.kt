@@ -1,4 +1,4 @@
-package de.orome.myshoppal
+package de.orome.myshoppal.activities
 
 import android.content.Intent
 import android.graphics.Typeface
@@ -9,6 +9,7 @@ import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.TextView
+import de.orome.myshoppal.R
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var tvAppName: TextView
@@ -33,7 +34,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed(
             {
                 // Launch the MainActivity
-                startActivity(Intent(this@SplashActivity,MainActivity::class.java))
+                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
                 finish()
             },
             2500
