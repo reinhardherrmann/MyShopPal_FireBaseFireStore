@@ -24,4 +24,11 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="login"><u>Login</u></string>
     <!--END-->
+
+    <string name="err_messsage_first_name">Please insert firstname</string>
+    <string name="err_messsage_last_name">Please insert lastname</string>
+    <string name="err_messsage_email">Please insert email</string>
+    <string name="err_messsage_password">Please insert password</string>
+    <string name="err_messsage_confirm_password">password does not match</string>
+    <string name="err_messsage_agree_terms_and_conditions">please agree terms and conditions</string>
 </resources>

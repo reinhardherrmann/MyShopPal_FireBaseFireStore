@@ -33,6 +33,14 @@
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
+step 19 Validierung der Registrierungsdaten
+        dataBinding aktiviert
+        ActionBar in Registrierung, mit "Zurück"-Button
+        der Action zugefügt
+        BaseActivity eingeführt und darin
+        Snackbar realisiert
+        RegisterActivity erbt von BaseActivity =>
+        snackbar in allen activities angezeigt wird
 ------------------------------------------------------------
 step 18 Register Activity
         Layout erstellt Wechsel zwischen Login und Register
