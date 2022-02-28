@@ -9,6 +9,10 @@ import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import de.orome.myshoppal.R
 import de.orome.myshoppal.databinding.ActivityRegisterBinding
 
@@ -17,6 +21,7 @@ class RegisterActivity : BaseActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var tvLogin: TextView
     private lateinit var toolbar: Toolbar
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +43,7 @@ class RegisterActivity : BaseActivity() {
         setupActionBar()
 
         binding.btnRegister.setOnClickListener {
-            validateRegisterValues()
+            registerUser()
             // finish()}
 
             binding.tvLogin.setOnClickListener {
@@ -108,10 +113,39 @@ class RegisterActivity : BaseActivity() {
                     false
                 }
                 else -> {
-                    showErrorSnackbar("Your data are valid", false)
+                    //showErrorSnackbar("Your data are valid", false)
                     true
                 }
             }
+        }
+    }
+
+    private fun registerUser(){
+        // check first, if given values are valid
+        if(validateRegisterValues()){
+            val email = binding.etEmail.text.toString().trim { it <= ' '}
+            val password = binding.etPassword.text.toString().trim { it <= ' '}
+
+            // create an instance of fireAuth and register user
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(
+                    OnCompleteListener<AuthResult> { task ->
+                        if (task.isSuccessful){
+                            val firebaseUser: FirebaseUser = task.result!!.user!!
+                            showErrorSnackbar(
+                                "Your are registered successfully! The" +
+                                        "User id is ${firebaseUser.uid}",
+                                false
+                            )
+                        } else{
+                            // registration went wrong
+                            showErrorSnackbar(
+                                task.exception!!.message.toString(),
+                                true
+                            )
+                        }
+                    }
+                )
         }
     }
 }

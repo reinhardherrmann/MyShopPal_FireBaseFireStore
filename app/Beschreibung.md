@@ -32,6 +32,9 @@
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
+step 20 register user in firebase auth
+        Authentisierung in Firebase aktiviert
+        fun registerUser implementiert
 ------------------------------------------------------------
 step 19 Validierung der Registrierungsdaten
         dataBinding aktiviert
