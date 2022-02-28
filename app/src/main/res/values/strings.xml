@@ -31,4 +31,6 @@
     <string name="err_messsage_password">Please insert password</string>
     <string name="err_messsage_confirm_password">password does not match</string>
     <string name="err_messsage_agree_terms_and_conditions">please agree terms and conditions</string>
+
+    <string name="please_wait">Please Wait&#8230;</string>
 </resources>

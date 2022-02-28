@@ -31,8 +31,10 @@
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
+step 24 Displaying the Progress Dialog While 
+        Registering the New User
 ------------------------------------------------------------
-step 20 register user in firebase auth
+step 23 register user in firebase auth
         Authentisierung in Firebase aktiviert
         fun registerUser implementiert
 ------------------------------------------------------------
