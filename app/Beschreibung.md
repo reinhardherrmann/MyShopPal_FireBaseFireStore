@@ -30,6 +30,9 @@
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
+25. Validation of Login Entries and Login
+    LoginActivity.kt erbt von BaseActivity
+    Login mit Weiterleitung zur MainActivity realisiert
 ------------------------------------------------------------
 step 24 Displaying the Progress Dialog While 
         Registering the New User
