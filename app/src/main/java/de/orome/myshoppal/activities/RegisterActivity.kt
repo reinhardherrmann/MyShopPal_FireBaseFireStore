@@ -1,5 +1,6 @@
 package de.orome.myshoppal.activities
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import de.orome.myshoppal.R
 import de.orome.myshoppal.databinding.ActivityRegisterBinding
+import de.orome.myshoppal.databinding.DialogProgressBinding
 
 class RegisterActivity : BaseActivity() {
 
@@ -22,6 +24,9 @@ class RegisterActivity : BaseActivity() {
     private lateinit var tvLogin: TextView
     private lateinit var toolbar: Toolbar
     private lateinit var auth: FirebaseAuth
+
+    private lateinit var mProgressDialog: Dialog
+    private lateinit var dialogBinding: DialogProgressBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,12 +50,11 @@ class RegisterActivity : BaseActivity() {
         binding.btnRegister.setOnClickListener {
             registerUser()
             // finish()}
+        }
 
-            binding.tvLogin.setOnClickListener {
-                intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                startActivity(intent)
-            }
-
+        binding.tvLogin.setOnClickListener {
+            intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(intent)
         }
 
     }
@@ -124,7 +128,7 @@ class RegisterActivity : BaseActivity() {
         // check first, if given values are valid
         if(validateRegisterValues()){
             // show Dialog
-            showProgressDialog(resources.getString(R.string.please_wait))
+            //showProgressDialog(resources.getString(R.string.please_wait))
             val email = binding.etEmail.text.toString().trim { it <= ' '}
             val password = binding.etPassword.text.toString().trim { it <= ' '}
 
@@ -132,7 +136,7 @@ class RegisterActivity : BaseActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(
                     OnCompleteListener<AuthResult> { task ->
-                        hideProgressDialog()
+                        //hideProgressDialog()
                         if (task.isSuccessful){
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             showErrorSnackbar(
@@ -151,4 +155,21 @@ class RegisterActivity : BaseActivity() {
                 )
         }
     }
+
+//    fun showProgressDialog(text: String){
+//        mProgressDialog = Dialog(this)
+//        /* Set the screen content from a layout resource
+//        the resource will be inflates, adding all the top-level views  to the screen. */
+//        dialogBinding = DataBindingUtil.setContentView(this,R.layout.dialog_progress)
+//        dialogBinding.tvProgressText.text = text
+//        mProgressDialog.setCancelable(false)
+//        mProgressDialog.setCanceledOnTouchOutside(false)
+//
+//        // start the dialog and display it in screen
+//        mProgressDialog.show()
+//    }
+//
+//    fun hideProgressDialog() {
+//        mProgressDialog.dismiss()
+//    }
 }

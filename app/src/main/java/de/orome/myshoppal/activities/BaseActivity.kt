@@ -10,8 +10,7 @@ import de.orome.myshoppal.databinding.DialogProgressBinding
 
 open class BaseActivity : AppCompatActivity() {
 
-    private lateinit var mProgressDialog: Dialog
-    private lateinit var dialogBinding: DialogProgressBinding
+
 
 
     fun showErrorSnackbar(message: String,errorMessage: Boolean){
@@ -37,20 +36,5 @@ open class BaseActivity : AppCompatActivity() {
             snackbar.show()
         }
 
-    fun showProgressDialog(text: String){
-        mProgressDialog = Dialog(this)
-        /* Set the screen content from a layout resource
-        the resource will be inflates, adding all the top-level views  to the screen. */
-        dialogBinding = DataBindingUtil.setContentView(this,R.layout.dialog_progress)
-        dialogBinding.tvProgressText.text = text
-        mProgressDialog.setCancelable(false)
-        mProgressDialog.setCanceledOnTouchOutside(false)
-        
-        // start the dialog and display it in screen
-        mProgressDialog.show()
-    }
 
-    fun hideProgressDialog() {
-        mProgressDialog.dismiss()
-    }
 }
