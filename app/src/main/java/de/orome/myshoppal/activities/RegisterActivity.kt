@@ -25,8 +25,8 @@ class RegisterActivity : BaseActivity() {
     private lateinit var toolbar: Toolbar
     private lateinit var auth: FirebaseAuth
 
-    private lateinit var mProgressDialog: Dialog
-    private lateinit var dialogBinding: DialogProgressBinding
+//    private lateinit var mProgressDialog: Dialog
+//    private lateinit var dialogBinding: DialogProgressBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -144,6 +144,9 @@ class RegisterActivity : BaseActivity() {
                                         "User id is ${firebaseUser.uid}",
                                 false
                             )
+                            // logout user, goto LoginActivity
+                            FirebaseAuth.getInstance().signOut()
+                            finish()
                         } else{
                             // registration went wrong
                             showErrorSnackbar(
